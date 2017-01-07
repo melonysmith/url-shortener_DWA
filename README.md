@@ -12,22 +12,6 @@ Once cloned, install using:
 npm install
 ```
 
-## Database
-dotenv is required in a development environment. To install dotenv:
-```javascript
-npm install dotenv --save-dev
-```
-Create a .env file containing the following:
-```javascript
-DB_NAME='name_of_your_database'
-DB_USER='your_username'
-DB_PASS='your_password'
-DB_HOST='xxx.x.x.x'
-DB_SCHEMA='mysql'
-DB_PORT='3306'
-```
-Edit fields as necessary.
-
 ## Start Server
 Start the server using:
 ```javascript
