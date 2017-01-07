@@ -23,6 +23,9 @@ If you would like your server to watch for changes and run continuously you can 
 npm install nodemon
 ```
 
+## Working with the API
+There are various ways to work with the API but I recomment [Postman](https://www.getpostman.com/docs/introduction).
+
 ## Endpoints
 CRUD for URLs
 
