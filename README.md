@@ -29,6 +29,12 @@ There are various ways to work with the API but I recommend using [Postman](http
 ![Postman Image 01]
 (https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman01.png)
 
+![Postman Image 02]
+(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman02.png)
+
+![Postman Image 03]
+(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman03.png)
+
 ## Endpoints
 CRUD for URLs
 
