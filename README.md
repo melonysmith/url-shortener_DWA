@@ -27,6 +27,10 @@ Start the server using:
 nodemon src/server.js
 ```
 
+## Local Host
+![Local Host Image 01]
+(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman01.png)
+
 ## Endpoints
 CRUD for URLs
 
