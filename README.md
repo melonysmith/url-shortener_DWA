@@ -24,7 +24,9 @@ npm install nodemon
 ```
 
 ## Working with the API
-There are various ways to work with the API but I recommend [Postman](https://www.getpostman.com/docs/introduction).
+There are various ways to work with the API but I recommend using [Postman](https://www.getpostman.com/docs/introduction).
+
+(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman01.png)
 
 ## Endpoints
 CRUD for URLs
