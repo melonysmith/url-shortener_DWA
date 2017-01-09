@@ -28,7 +28,7 @@ exports.findID = (payload, err, success) => {
 };
 
 // find by short URL
-exports.findShortURL = (payload, err, success) => {
+exports.findShorterURL = (payload, err, success) => {
   db.url.find({
     where: {
       shortURL: payload.shortURL

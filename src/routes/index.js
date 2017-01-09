@@ -18,7 +18,7 @@ module.exports = (express) => {
   // redirect short url to original url
  router.get("/go/:shortURL", (req, res) => {
    req.body.shortURL = req.params.shortURL;
-   url.findShortURL(req.body, (err) => {
+   url.findShorterURL(req.body, (err) => {
      res.status(500).json(err);
    }, (data) => {
      res.redirect("http://www." + data.originalURL);

@@ -13,8 +13,10 @@ module.exports = (express) => {
   router.post('/urls', (req, res) => {
     var genShortURL = require("../../lib/genShortURL");
     req.body.shortURL = genShortURL.genShortURL();
-    res.json ({
-      shortURL: genShortURL.genShortURL()
+    url.create(req.body, (err) => {
+      res.status(500).json(err);
+    }, (data) => {
+      res.status(200).json(data);
     });
   });
 
