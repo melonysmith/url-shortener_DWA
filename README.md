@@ -38,9 +38,9 @@ Method | Path | Result
 ------------ | ------------- | -------------
 POST  |  /api/v1/url  |  Create a shortened URL
 GET  |  /api/v1/urls  |  Display all URLS
-GET  |  /api/v1/url/:id  |  Displays URL based upon id
-POST  |  /api/v1/url/:id  |  Update URL based upon id
-DELETE  |  /api/v1/url/:id  |  Delete url based upon id
+GET  |  /api/v1/urls/:id  |  Displays URL based upon id
+POST  |  /api/v1/urls/:id  |  Update URL based upon id
+DELETE  |  /api/v1/urls/:id  |  Delete url based upon id
 
 ## Routes
 Route | Result
