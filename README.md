@@ -38,9 +38,9 @@ Method | Path | Result
 ------------ | ------------- | -------------
 POST  |  /api/v1/url  |  Create a shortened URL
 GET  |  /api/v1/urls  |  Display all URLS
-GET  |  /api/v1/urls/:id  |  Displays URL based upon id
-POST  |  /api/v1/urls/:id  |  Update URL based upon id
-DELETE  |  /api/v1/urls/:id  |  Delete url based upon id
+GET  |  /api/v1/url/:id  |  Displays URL based upon id
+POST  |  /api/v1/url/:id  |  Update URL based upon id
+DELETE  |  /api/v1/url/:id  |  Delete url based upon id
 
 ## Routes
 Route | Result
@@ -54,10 +54,10 @@ There are various ways to work with the API but I recommend using [Postman](http
 (https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman01.png)
 
 ![Postman Image 02]
-(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman02.png)
+(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman04.png)
 
 ![Postman Image 03]
-(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman03.png)
+(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman05.png)
 
 ## dotenv
 Installation:
