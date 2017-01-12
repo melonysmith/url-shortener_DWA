@@ -78,3 +78,14 @@ DB_PORT=“0000”
 Include and require .env:
 ```javascript
 require('dotenv').config()
+```
+
+## Usage (Debugging)
+Debugging = true (on):
+```javascript
+DEBUG=true node src/server.js
+```
+Debugging = false (off):
+```javascript
+DEBUG=false node src/server.js
+```
