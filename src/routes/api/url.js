@@ -1,7 +1,13 @@
 // URL Shortener by Melony Smith
 
 // dependencies
+const chalk = require('chalk');
 const url = require("../../models/url");
+const utility = require('../../lib/debug');
+
+// chalk rules
+const success = chalk.green;
+const error = chalk.red;
 
 // export express
 module.exports = (express) => {
@@ -14,18 +20,22 @@ module.exports = (express) => {
     var genShortURL = require("../../lib/genShortURL");
     req.body.shortURL = genShortURL.genShortURL();
     url.create(req.body, (err) => {
+        utility.debug(error('Creation: Error!', err));
       res.status(500).json(err);
     }, (data) => {
+          utility.debug(success('Creation: Success!', data));
       res.status(200).json(data);
     });
   });
 
-  // Read
+  // read
   // get all urls
   router.get('/urls', (req, res) => {
 		url.findAll((err) => {
-			res.status(500).json(err);
+          utility.debug(error('Access all URLs: Error', err));
+      res.status(500).json(err);
 		}, (data) => {
+          utility.debug(success('Access all URLs: Success', data));
 			res.status(200).json(data);
 		})
 	});
@@ -34,8 +44,9 @@ module.exports = (express) => {
   router.get('/urls/:id', (req, res) => {
 		req.body.id = req.params.id;
 		url.findID(req.body, (err) => {
+          utility.debug(error('Access URL: Error', err));
 			res.status(500).json(err);
-		}, (data) => {
+          utility.debug(success('Access URL: Success', data));
 			res.status(200).json(data);
 		})
 	});
@@ -44,8 +55,10 @@ module.exports = (express) => {
   router.post('/urls/:id', (req, res) => {
     req.body.id = req.params.id;
     url.update(req.body, (err) => {
+          utility.debug(error('URL update: Error', err));
       res.status(500).json(err);
     }, (data) => {
+          utility.debug(success('URL update: Success', data));
       res.status(200).json(data);
     })
   });
@@ -54,8 +67,9 @@ module.exports = (express) => {
   router.delete('/urls/:id', (req, res) => {
     req.body.id = req.params.id;
     url.destroy(req.body, (err) => {
+          utility.debug(error('URL delete: Error', err));
       res.status(500).json(err);
-    }, (data) => {
+          utility.debug(success('URL delete: Success', data));
       res.status(200).json(data);
     })
   });
