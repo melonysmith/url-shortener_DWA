@@ -81,11 +81,11 @@ require('dotenv').config()
 ```
 
 ## Usage (Debugging)
-Debugging = true (on):
+Debugging = true (on; messages will appear within the console):
 ```javascript
 DEBUG=true node src/server.js
 ```
-Debugging = false (off):
+Debugging = false (off; messages will not appear within the console):
 ```javascript
 DEBUG=false node src/server.js
 ```
