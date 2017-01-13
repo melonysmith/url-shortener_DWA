@@ -9,7 +9,7 @@ const utility = require('../lib/debug')
 require('dotenv').config();
 
 // chalk rule
-const dbCon = chalk.gray;
+const dbCon = chalk.white.dim;
 
 // sequelize
 // connect to database
@@ -30,7 +30,7 @@ const sequelize = new Sequelize(
 
 // authenticate connection
 sequelize.authenticate();
-utility.debug(dbCon('Database connection successful. It\'s goin\' down!'));
+  utility.logIt(dbCon('Database connection successful. It\'s goin\' down!'));
 
 // define URL
 const url = sequelize.define('url', {

@@ -27,7 +27,7 @@ module.exports = (express) => {
  router.get("/go/:shortURL", (req, res) => {
    req.body.shortURL = req.params.shortURL;
    url.findShorterURL(req.body, (err) => {
-     utility.debug(error('Load original URL: Error', data));
+     utility.debug(error('Load original URL: Error', err));
      res.status(500).json(err);
    }, (data) => {
      utility.debug(success('Load original URL: Success', data));
