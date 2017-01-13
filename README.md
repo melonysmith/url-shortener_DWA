@@ -36,11 +36,11 @@ CRUD for URLs
 
 Method | Path | Result
 ------------ | ------------- | -------------
-POST  |  /api/v1/url  |  Create a shortened URL
+POST  |  /api/v1/urls  |  Create a shortened URL
 GET  |  /api/v1/urls  |  Display all URLS
-GET  |  /api/v1/url/:id  |  Displays URL based upon id
-POST  |  /api/v1/url/:id  |  Update URL based upon id
-DELETE  |  /api/v1/url/:id  |  Delete url based upon id
+GET  |  /api/v1/urls/:id  |  Displays URL based upon id
+POST  |  /api/v1/urls/:id  |  Update URL based upon id
+DELETE  |  /api/v1/urls/:id  |  Delete url based upon id
 
 ## Routes
 Route | Result
@@ -78,3 +78,14 @@ DB_PORT=“0000”
 Include and require .env:
 ```javascript
 require('dotenv').config()
+```
+
+## Usage (Debugging)
+Debugging = true (on; messages will appear within the console):
+```javascript
+DEBUG=true node src/server.js
+```
+Debugging = false (off; messages will not appear within the console but will log to a file):
+```javascript
+DEBUG=false node src/server.js
+```

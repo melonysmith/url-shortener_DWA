@@ -1,6 +1,6 @@
 // URL Shortener by Melony Smith
 
-// dependencies
+// dependency
 const db = require('./db');
 
 // create
@@ -31,7 +31,7 @@ exports.findID = (payload, err, success) => {
 exports.findShorterURL = (payload, err, success) => {
   db.url.find({
     where: {
-      shortURL: payload.shortURL
+      shortURL: payload.shortURL,
     },
     include: [{
       all: true,
