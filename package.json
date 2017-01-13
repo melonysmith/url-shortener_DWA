@@ -15,7 +15,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "chalk": "^1.1.3",
     "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "log-timestamp": "^0.1.2",
     "mysql": "^2.12.0",
     "sequelize": "^3.29.0"
   },
