@@ -89,3 +89,6 @@ Debugging = false (off; messages will not appear within the console but will log
 ```javascript
 DEBUG=false node src/server.js
 ```
+
+## Coding Style Guide
+This API follows the coding style guide set by [Airbnb](http://airbnb.io/javascript/).
