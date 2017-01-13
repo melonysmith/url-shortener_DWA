@@ -85,7 +85,7 @@ Debugging = true (on; messages will appear within the console):
 ```javascript
 DEBUG=true node src/server.js
 ```
-Debugging = false (off; messages will not appear within the console):
+Debugging = false (off; messages will not appear within the console but will log to a file):
 ```javascript
 DEBUG=false node src/server.js
 ```
