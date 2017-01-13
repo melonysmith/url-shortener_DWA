@@ -3,29 +3,30 @@
 // dependencies
 const chalk = require('chalk');
 const fs = require('fs');
-const stamp = require('log-timestamp');
+require('log-timestamp');
 
 // chalk rule
-const saved = chalk.white;
 const cons = chalk.magenta;
 
-function logIt (info) {
-  if(process.env.DEBUG) {
-    // create a variable for console.log
-    const log  = console.log(info);
-    fs.appendFile('./logs/log.txt', '\n' +  info  + '\n', (err) => {
+function logIt(info) {
+  if (process.env.DEBUG) {
+    fs.appendFile('./logs/log.txt', '\n' + info + '\n', () => {
     });
-  };
+  }
 }
 
 // create debug export
 exports.debug = (title, obj, status) => {
   const output = title;
   if (!status) {
-    status = "";
+    /* eslint-disable no-param-reassign */
+    status = '';
+    /* eslint-enable no-param-reassign */
   }
-  if (process.env.DEBUG == 'true') {
+  if (process.env.DEBUG === 'true') {
+    /* eslint-disable no-console */
     console.log(cons(output, obj, status));
+    /* eslint-enable no-console */
   }
 };
 
