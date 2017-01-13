@@ -20,10 +20,10 @@ module.exports = (express) => {
     var genShortURL = require("../../lib/genShortURL");
     req.body.shortURL = genShortURL.genShortURL();
     url.create(req.body, (err) => {
-        utility.debug(error('Creation: Error! ', err));
+        utility.logIt(error('Creation: Error! ', err));
       res.status(500).json(err);
     }, (data) => {
-        utility.debug(success('Creation: Success! ', data));
+        utility.logIt(success('Creation: Success! ', data));
       res.status(200).json(data);
     });
   });
@@ -32,10 +32,10 @@ module.exports = (express) => {
   // get all urls
   router.get('/urls', (req, res) => {
 		url.findAll((err) => {
-        utility.debug(error('Access all URLs: Error ', err));
+        utility.logIt(error('Access all URLs: Error ', err));
       res.status(500).json(err);
 		}, (data) => {
-        utility.debug(success('Access all URLs: Success ', data));
+        utility.logIt(success('Access all URLs: Success ', data));
 			res.status(200).json(data);
 		})
 	});
@@ -44,9 +44,9 @@ module.exports = (express) => {
   router.get('/urls/:id', (req, res) => {
 		req.body.id = req.params.id;
 		url.findID(req.body, (err) => {
-        utility.debug(error('Access URL: Error ', err));
+        utility.logIt(error('Access URL: Error ', err));
 			res.status(500).json(err);
-        utility.debug(success('Access URL: Success ', data));
+        utility.logIt(success('Access URL: Success ', data));
 			res.status(200).json(data);
 		})
 	});
@@ -55,10 +55,10 @@ module.exports = (express) => {
   router.post('/urls/:id', (req, res) => {
     req.body.id = req.params.id;
     url.update(req.body, (err) => {
-        utility.debug(error('URL update: Error ', err));
+        utility.logIt(error('URL update: Error ', err));
       res.status(500).json(err);
     }, (data) => {
-        utility.debug(success('URL update: Success ', data));
+        utility.logIt(success('URL update: Success ', data));
       res.status(200).json(data);
     })
   });
@@ -67,9 +67,9 @@ module.exports = (express) => {
   router.delete('/urls/:id', (req, res) => {
     req.body.id = req.params.id;
     url.destroy(req.body, (err) => {
-        utility.debug(error('URL delete: Error ', err));
+        utility.logIt(error('URL delete: Error ', err));
       res.status(500).json(err);
-        utility.debug(success('URL delete: Success ', data));
+        utility.logIt(success('URL delete: Success ', data));
       res.status(200).json(data);
     })
   });
