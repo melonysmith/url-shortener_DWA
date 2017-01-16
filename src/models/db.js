@@ -30,7 +30,7 @@ const sequelize = new Sequelize(
 
 // authenticate connection
 sequelize.authenticate();
-utility.logIt(dbCon('Database connection successful. It\'s goin\' down!'));
+utility.debug(dbCon('Database connection successful. It\'s goin\' down!'));
 
 // define URL
 const url = sequelize.define('url', {

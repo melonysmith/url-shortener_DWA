@@ -1,34 +1,20 @@
 // URL Shortener by Melony Smith
 
-// dependencies
+/* eslint-disable no-console */
+
 const chalk = require('chalk');
 const fs = require('fs');
-require('log-timestamp');
 
-// chalk rule
-const cons = chalk.magenta;
+const error = chalk.white;
 
-function logIt(info) {
-  if (process.env.DEBUG) {
-    fs.appendFile('./logs/log.txt', '\n' + info + '\n', () => {
-    });
-  }
-}
-
-// create debug export
 exports.debug = (title, obj, status) => {
-  const output = title;
+  const seperator = '\n>--------------------------------------------------<\n';
+  const output = seperator + title + seperator;
   if (!status) {
-    /* eslint-disable no-param-reassign */
-    status = '';
-    /* eslint-enable no-param-reassign */
+    status === '';
   }
   if (process.env.DEBUG === 'true') {
-    /* eslint-disable no-console */
-    console.log(cons(output, obj, status));
-    /* eslint-enable no-console */
+    console.log(error(output), obj, status);
   }
+  fs.appendFile('./logs/msg.log', output);
 };
-
-// export log
-exports.logIt = logIt;
