@@ -90,5 +90,5 @@ Debugging = false (off; messages will not appear within the console but will log
 DEBUG=false node src/server.js
 ```
 
-## Coding Style Guide
-This API follows the coding style guide set by [Airbnb](http://airbnb.io/javascript/).
+## Coding Style
+This API follows the coding style guide set by [Airbnb](http://airbnb.io/javascript/). I linted this project using [Atom](https://atom.io/) as my IDE and installing both the linter and linter-eslint packages within Atom.
