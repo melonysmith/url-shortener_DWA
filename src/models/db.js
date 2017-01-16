@@ -3,7 +3,7 @@
 // dependencies
 const Sequelize = require('sequelize');
 const chalk = require('chalk');
-const utility = require('../lib/debug')
+const utility = require('../lib/debug');
 
 // require dotenv
 require('dotenv').config();
@@ -25,12 +25,12 @@ const sequelize = new Sequelize(
       min: 0,
       idle: 10000,
     },
-   logging: false,
-});
+    logging: false,
+  });
 
 // authenticate connection
 sequelize.authenticate();
-  utility.logIt(dbCon('Database connection successful. It\'s goin\' down!'));
+utility.debug(dbCon('Database connection successful. It\'s goin\' down!'));
 
 // define URL
 const url = sequelize.define('url', {
@@ -39,7 +39,7 @@ const url = sequelize.define('url', {
   },
   shortURL: {
     type: Sequelize.STRING,
-  }
+  },
 });
 
 // sync
