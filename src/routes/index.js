@@ -25,10 +25,8 @@ module.exports = (express) => {
 
   // redirect short url to original url
   router.get('/go/:shortURL', (req, res) => {
-    /* eslint-disable no-param-reassign */
-    req.body.shortURL = req.params.shortURL;
-    /* eslint-enable no-param-reassign */
-    url.findShorterURL(req.body, (err) => {
+    const sURL = req.params.shortURL;
+    url.findShorterURL(sURL, (err) => {
       utility.debug(error('Load original URL: Error', err));
       res.status(500).json(err);
     }, (data) => {

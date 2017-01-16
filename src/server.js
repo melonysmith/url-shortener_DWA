@@ -29,11 +29,11 @@ app.use(bodyParser.json());
 app.use('/', require('./routes')(express));
 
 // environmental variable set to
-utility.logIt(envVar('Environmental variable is defined as ' + process.env.DEBUG));
+utility.debug(envVar('Environmental variable is defined as ' + process.env.DEBUG));
 
 // set up server
 const server = app.listen(port, () => {
-  utility.logIt(active('STILL on like Donkey Kong on Port ' + port));
+  utility.debug(active('STILL on like Donkey Kong on Port ' + port));
 });
 
 // export server
