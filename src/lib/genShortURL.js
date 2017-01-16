@@ -10,7 +10,6 @@ function genShortURL() {
   let genShortURLText = '';
 
   // do the shorten url magic
-  // eslint disable added with approval
   /* eslint-disable no-plusplus */
   for (let i = 0; i < genShortURLLength; i++) {
     /* eslint-enable no-plusplus */

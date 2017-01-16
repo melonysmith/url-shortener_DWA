@@ -90,5 +90,15 @@ Debugging = false (off; messages will not appear within the console but will log
 DEBUG=false node src/server.js
 ```
 
-## Coding Style
-This API follows the coding style guide set by [Airbnb](http://airbnb.io/javascript/). I linted this project using [Atom](https://atom.io/) as my IDE and installing both the linter and linter-eslint packages within Atom.
+## Coding Style Guide
+This API follows the coding style guide set by [Airbnb](http://airbnb.io/javascript/).
+
+## Unit Tests
+You will first need to install [mocha](https://www.npmjs.com/package/mocha).
+In Terminal run the following command for unit testing:
+```javascript
+mocha
+```
+
+## Code Coverage
+For code coverage, check out [istanbul](https://www.npmjs.com/package/istanbul).

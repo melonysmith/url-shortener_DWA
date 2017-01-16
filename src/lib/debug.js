@@ -1,6 +1,5 @@
 // URL Shortener by Melony Smith
 
-// eslint disable added with approval
 /* eslint-disable no-console */
 
 const chalk = require('chalk');
