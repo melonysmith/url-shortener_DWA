@@ -2,14 +2,11 @@
 
 // dependencies
 const Sequelize = require('sequelize');
-const chalk = require('chalk');
-const utility = require('../lib/debug');
-
-// require dotenv
 require('dotenv').config();
+var chalk = require('chalk');
 
-// chalk rule
-const dbCon = chalk.white.dim;
+//chalk rule
+var dbConnect = chalk.gray;
 
 // sequelize
 // connect to database
@@ -25,12 +22,12 @@ const sequelize = new Sequelize(
       min: 0,
       idle: 10000,
     },
-    logging: false,
-  });
+   logging: false,
+});
 
 // authenticate connection
 sequelize.authenticate();
-utility.debug(dbCon('Database connection successful. It\'s goin\' down!'));
+console.log(dbConnect('--< Database: Connected >-- It\'s goin\' down!'));
 
 // define URL
 const url = sequelize.define('url', {

@@ -4,7 +4,7 @@
   "description": "URL Shortener",
   "main": "src/server.js",
   "scripts": {
-    "test": "test/__api.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "URL",
@@ -15,22 +15,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "chai": "^3.5.0",
-    "chalk": "^1.1.3",
-    "dotenv": "^2.0.0",
+    "chalk": "^3.10.10",
     "express": "^4.14.0",
-    "fs": "0.0.1-security",
-    "log-timestamp": "^0.1.2",
     "mysql": "^2.12.0",
-    "sequelize": "^3.29.0",
-    "supertest": "^2.0.1"
+    "sequelize": "^3.29.0"
   },
   "devDependencies": {
-    "eslint": "^3.13.1",
-    "eslint-config-airbnb": "^14.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0",
-    "mocha": "^3.2.0"
+    "dotenv": "^2.0.0"
   }
 }
