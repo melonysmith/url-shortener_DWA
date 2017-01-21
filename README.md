@@ -37,15 +37,6 @@ CRUD for URLs
 Method | Path | Result
 ------------ | ------------- | -------------
 POST  |  /api/v1/urls  |  Create a shortened URL
-GET  |  /api/v1/urls  |  Display all URLS
-GET  |  /api/v1/urls/:id  |  Displays URL based upon id
-POST  |  /api/v1/urls/:id  |  Update URL based upon id
-DELETE  |  /api/v1/urls/:id  |  Delete url based upon id
-
-## Routes
-Route | Result
----------- | -------------
-/go/:shortURL  |  Redirect user to original URL based on the short URL
 
 ## Working with the API
 There are various ways to work with the API but I recommend using [Postman](https://www.getpostman.com/docs/introduction).
@@ -54,51 +45,7 @@ There are various ways to work with the API but I recommend using [Postman](http
 (https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman01.png)
 
 ![Postman Image 02]
-(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman04.png)
+(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman02.png)
 
 ![Postman Image 03]
-(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman05.png)
-
-## dotenv
-Installation:
-```javascript
-npm install dotenv --save
-```
-
-Create and upload a .env (dotenv) file with the following information:
-```javascript
-DB_NAME="your_db_name"
-DB_USER="username"
-DB_PASS="password"
-DB_HOST="000.0.0.0"
-DB_SCHEMA=mysql
-DB_PORT=“0000”
-```
-
-Include and require .env:
-```javascript
-require('dotenv').config()
-```
-
-## Usage (Debugging)
-Debugging = true (on; messages will appear within the console):
-```javascript
-DEBUG=true node src/server.js
-```
-Debugging = false (off; messages will not appear within the console but will log to a file):
-```javascript
-DEBUG=false node src/server.js
-```
-
-## Coding Style Guide
-This API follows the coding style guide set by [Airbnb](http://airbnb.io/javascript/).
-
-## Unit Tests
-You will first need to install [mocha](https://www.npmjs.com/package/mocha).
-In Terminal run the following command for unit testing:
-```javascript
-mocha
-```
-
-## Code Coverage
-For code coverage, check out [istanbul](https://www.npmjs.com/package/istanbul).
+(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman03.png)
