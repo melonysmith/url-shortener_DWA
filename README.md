@@ -89,17 +89,3 @@ Debugging = false (off; messages will not appear within the console but will log
 ```javascript
 DEBUG=false node src/server.js
 ```
-
-## Coding Style Guide
-This API follows the coding style guide set by [Airbnb](http://airbnb.io/javascript/).
-
-## Unit Tests
-You will first need to install [mocha](https://www.npmjs.com/package/mocha).
-In Terminal run the following command for unit testing:
-```javascript
-mocha
-```
-
-## Code Coverage
-For code coverage, check out [istanbul](https://www.npmjs.com/package/istanbul).
-```
