@@ -1,51 +1,70 @@
-# url-shortener
-URL Shortener by Melony Smith for Full Sail University: Deployment of Web Applications Online
+## debugutil
+A [NodeJS](https://nodejs.org/en/) API debug utility tool with logging developed for my Deployment of Web Applications class at Full Sail University. This package will allow you to debug your API with success, warn and error messages displayed in your CLI (Command Line Interface) as well as saving timestamped messages to a .log file.
 
-## Purpose
-URL Shortener is a NodeJS based RESTful API that allows you to provide a long, cumbersome link to be returned as a convenient six digit  URL. The shortened URL will redirect to the page provided by the original link. This is especially useful for sharing links on social media sites that limit the number of characters you are allowed to post.
+Note: Logging is not working. I will have this fixed soon.
+
+## Required
+This Debug Utility Tool will run on an API created with [NodeJS](https://nodejs.org/en/)
 
 ## Installation
-Clone or download this repository using the green "Clone or download" button for this repository. The button can be found up and to the right.
+In your CLI, ensure that you are in the directory containing your [NodeJS](https://nodejs.org/en/) API.
 
-Once cloned, install using:
+Run the following to add debugutil to your node_modules and your package.json file dependencies:
+```javascript
+npm install debugutil
+```
+
+## Dependencies
+After installation, run the following to install the dependencies required to properly run debugutil:
 ```javascript
 npm install
 ```
 
-## Start Server
-Start the server using:
+## Debugging
+You will need to require the debugutil package in each file you wish it to run. You can do this by adding the following to the top of each file:
 ```javascript
-node src/server.js
+require('utildebug');
 ```
 
-If you would like your server to watch for changes and run continuously you can use nodemon.
+To enable logging, use the following environmental variable:
 ```javascript
-npm install nodemon
-```
-Start the server using:
-```javascript
-nodemon src/server.js
+DEBUG=true
 ```
 
-## Local Host
-![Local Host Image 01]
-(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/localhost01.png)
+You will now receive green success, yellow warn and red error messages in your CLI as well as have them logged to the .log file located in the logs folder.
 
-## Endpoints
-CRUD for URLs
+To disable logging, use the following environmental variable:
+```javascript
+DEBUG=false
+```
 
-Method | Path | Result
------------- | ------------- | -------------
-POST  |  /api/v1/urls  |  Create a shortened URL
+## Unit Testing
+This package has been Unit Tested using [chai](https://www.npmjs.com/package/chai) and [mocha](https://www.npmjs.com/package/mocha). You will need to install these packages to your devDependencies to run tests.
 
-## Working with the API
-There are various ways to work with the API but I recommend using [Postman](https://www.getpostman.com/docs/introduction).
+To run tests, execute the following command in your CLI:
+```javascript
+DEBUG=true mocha
+```
 
-![Postman Image 01]
-(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman01.png)
+## Code Coverage
+Check out [istanbul](https://www.npmjs.com/package/istanbul) for more on code coverage.
 
-![Postman Image 02]
-(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman02.png)
+To run tests with code coverage, execute the following command in your CLI:
+```javascript
+istanbul cover src/debug.js
+```
 
-![Postman Image 03]
-(https://github.com/melonysmith/url-shortener_DWA/blob/master/img/postman03.png)
+## Other
+You can change the name and/or path of the folder and the .log file, in src/debug.js. Just edit the following lines:
+```javascript
+fs.appendFile('./logs/logFile.log', function () {
+  console.log('Data was successfully appended to file!');
+});
+```    
+
+You can change the display color of messages in src/debug.js via [chalk](https://www.npmjs.com/package/chalk) by editing the following:
+```javascript
+const success = chalk.green;
+const warn = chalk.yellow;
+const error = chalk.red;
+```
