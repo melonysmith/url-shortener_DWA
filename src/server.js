@@ -3,15 +3,13 @@
 // dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
-const chalk = require('chalk');
-const utility = require('./lib/debug');
+var util = require('./lib/debug.js');
+var chalk = require('chalk');
 
-// require dotenv
-require('dotenv').config();
+// chalk rule
+var active = chalk.magenta;
 
-// chalk rules
-const active = chalk.magenta;
-const envVar = chalk.gray;
+require("dotenv").config();
 
 // instantiate express
 const app = express();
@@ -21,20 +19,17 @@ const port = process.env.PORT || 3000;
 
 // express uses bodyParser
 app.use(bodyParser.urlencoded({
-  extended: true,
+  extended: true
 }));
 app.use(bodyParser.json());
 
 // express uses routes directory
 app.use('/', require('./routes')(express));
 
-// environmental variable set to
-utility.debug(envVar('Environmental variable is defined as ' + process.env.DEBUG));
-
 // set up server
-const server = app.listen(port, () => {
-  utility.debug(active('STILL on like Donkey Kong on Port ' + port));
+exports.server = app.listen(port, () => {
+  util.debug(active('Still on like Donkey Kong on Port', port));
 });
 
 // export server
-module.exports = server;
+module.exports = app;
