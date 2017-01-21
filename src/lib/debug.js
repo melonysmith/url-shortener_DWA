@@ -1,16 +1,20 @@
 // URL Shortener by Melony Smith
 
-// dependencies
-var chalk = require('chalk');
+/* eslint-disable no-console */
 
-// chalk rule
-var success = chalk.gray;
+const chalk = require('chalk');
+const fs = require('fs');
 
-// debug function
-exports.debug = (title) => {
-  const separator = '\n>-------------------------------------------------------<\n';
-  const output = `--< DEBUG=true >-- ${title}`;
-  if (process.env.DEBUG) {
-    console.log(success(output, separator));
+const error = chalk.white;
+
+exports.debug = (title, obj, status) => {
+  const seperator = '\n>--------------------------------------------------<\n';
+  const output = seperator + title + seperator;
+  if (!status) {
+    status === '';
   }
+  if (process.env.DEBUG === 'true') {
+    console.log(error(output), obj, status);
+  }
+  fs.appendFile('./logs/msg.log', output);
 };

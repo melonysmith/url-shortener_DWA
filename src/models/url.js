@@ -1,6 +1,6 @@
 // URL Shortener by Melony Smith
 
-// dependencies
+// dependency
 const db = require('./db');
 
 // create
@@ -23,7 +23,7 @@ exports.findID = (payload, err, success) => {
     include: [{
       all: true,
       nested: true,
-    }]
+    }],
   }).then(success).catch(err);
 };
 
@@ -35,7 +35,7 @@ exports.findShorterURL = (payload, err, success) => {
     },
     include: [{
       all: true,
-      nested: true
+      nested: true,
     }],
   }).then(success).catch(err);
 };
@@ -45,7 +45,7 @@ exports.update = (payload, err, success) => {
   db.url.find({
     where: {
       id: payload.id,
-    }
+    },
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
@@ -56,6 +56,6 @@ exports.destroy = (payload, err, success) => {
   db.url.destroy({
     where: {
       id: payload.id,
-    }
+    },
   }).then(success).catch(err);
 };
