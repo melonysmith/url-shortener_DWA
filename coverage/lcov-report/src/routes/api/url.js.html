@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/routes/api/url.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/routes/api/</a> url.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.56% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.56% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// URL Shortener by Melony Smith
+&nbsp;
+// dependencies
+const chalk = require('chalk');
+const url = require('../../models/url');
+const utility = require('../../lib/debug');
+const genShortURL = require('../../lib/genShortURL');
+&nbsp;
+// chalk rules
+const success = chalk.green;
+const error = chalk.red;
+&nbsp;
+// export express
+module.exports = (express) =&gt; {
+  // use express router function
+  const router = express.Router();
+&nbsp;
+  // CREATE
+  // add urls to database
+  router.post('/urls', (req, res) =&gt; {
+    // let reqBody = req.body.shortURL;
+    // reqBody = genShortURL.genShortURL();
+<span class="cstat-no" title="statement not covered" >    req.body.shortURL = genShortURL.genShortURL(); </span>// eslint-disable-line no-param-reassign
+    // I could not get the above to work without disabling the rule.
+    // Approval was not obtained to disable this rule.
+<span class="cstat-no" title="statement not covered" >    url.create(req.body, (err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      utility.debug(error('Creation: Error! Failed to add to URL.', error));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(500).json(err);</span>
+    }, (data) =&gt; {
+<span class="cstat-no" title="statement not covered" >      utility.debug(success('Creation: Success! Added URL to database.', data));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(200).json(data);</span>
+    });
+  });
+&nbsp;
+  // read
+  // get all urls
+  router.get('/urls', (req, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    url.findAll((err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      utility.debug(error('Access all URLs: Error! Failed to access all URLs.', err));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(500).json(err);</span>
+    }, (data) =&gt; {
+<span class="cstat-no" title="statement not covered" >      utility.debug(success('Access all URLs: Success! Accessed all URLs.', data));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(200).json(data);</span>
+    });
+  });
+&nbsp;
+   // get url by id
+  router.get('/urls/:id', (req, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    const findURL = req.params.id;</span>
+<span class="cstat-no" title="statement not covered" >    url.findID(findURL, (err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      utility.debug(error('Access URL: Error! Unable to access URL by ID.', err));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(500).json(err);</span>
+<span class="cstat-no" title="statement not covered" >      utility.debug(success('Access URL: Success! Accessed URL by ID.'));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(200).json();</span>
+    });
+  });
+&nbsp;
+   // update url by id
+  router.post('/urls/:id', (req, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    const upURL = req.params.id;</span>
+<span class="cstat-no" title="statement not covered" >    url.update(upURL, (err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      utility.debug(error('URL update: Error! URL failed to update.', err));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(500).json(err);</span>
+    }, (data) =&gt; {
+<span class="cstat-no" title="statement not covered" >      utility.debug(success('URL update: Success! URL has been updated.', data));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(200).json(data);</span>
+    });
+  });
+&nbsp;
+   // delete url by id
+  router.delete('/urls/:id', (req, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    const delURL = req.params.id;</span>
+<span class="cstat-no" title="statement not covered" >    url.destroy(delURL, (err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      utility.debug(error('URL delete: Error! URL failed to delete.', err));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(500).json(err);</span>
+<span class="cstat-no" title="statement not covered" >      utility.debug(success('URL delete: Success! URL has been deleted.'));</span>
+<span class="cstat-no" title="statement not covered" >      res.status(200).json();</span>
+    });
+  });
+&nbsp;
+ // return express router
+  return router;
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jan 16 2017 13:47:31 GMT-0600 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

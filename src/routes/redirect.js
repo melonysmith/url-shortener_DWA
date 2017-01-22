@@ -1,3 +1,6 @@
+// URL Shortener by Melony Smith
+
+// dependencies
 const url = require('../models/url');
 
 module.exports = (express) => {
@@ -10,7 +13,7 @@ module.exports = (express) => {
     });
   });
 
-  // read one shortUR, get response of originalURL
+  // read one shortURL, get response of originalURL
   router.get('/:shortURL', (req, res) => {
     const request = req;
     const response = res;
