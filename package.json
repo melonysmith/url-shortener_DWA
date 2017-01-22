@@ -2,7 +2,7 @@
   "name": "debugutil",
   "version": "1.6.0",
   "description": "Debug Utility Tool with Logging",
-  "main": "",
+  "main": "npm start",
   "scripts": {
     "start": "node src/server.js",
     "test": "DEBUG=true mocha"
