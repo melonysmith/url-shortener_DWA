@@ -3,7 +3,7 @@
 // dependencies
 const Sequelize = require('sequelize');
 const chalk = require('chalk');
-const utility = require('../lib/debug');
+// const utility = require('../lib/debug');
 
 // require dotenv
 require('dotenv').config();
@@ -30,7 +30,7 @@ const sequelize = new Sequelize(
 
 // authenticate connection
 sequelize.authenticate();
-utility.debug(dbCon('Database connection successful. It\'s goin\' down!'));
+console.log(dbCon('Database connection successful. It\'s goin\' down!'));
 
 // define URL
 const url = sequelize.define('url', {
