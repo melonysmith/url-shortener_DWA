@@ -1,13 +1,15 @@
 // URL Shortener by Melony Smith
 
+/* eslint-disable no-console */
+
 // dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
 // const util = require('./lib/debug.js');
-// const chalk = require('chalk');
-//
-// // chalk rule
-// const active = chalk.magenta;
+const chalk = require('chalk');
+
+// chalk rule
+const active = chalk.magenta;
 
 require('dotenv').config();
 
@@ -25,7 +27,7 @@ app.use('/', require('./routes')(express));
 const port = process.env.PORT || 3000;
 // set up server
 const server = app.listen(port, () => {
-  console.log('Still on like Donkey Kong on Port ' + port);
+  console.log(active('Still on like Donkey Kong on Port ' + port));
 });
 
 // export server

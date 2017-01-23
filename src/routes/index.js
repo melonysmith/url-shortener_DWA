@@ -1,47 +1,42 @@
 // URL Shortener by Melony Smith
 
 // dependencies
+const chalk = require('chalk');
 const url = require('../models/url');
-var redirect = require('./redirect');
-const util = require('../lib/debug');
+const utility = require('./../lib/debug');
+
+// chalk rules
+const success = chalk.green;
+const error = chalk.red;
 
 // export express
 module.exports = (express) => {
   // use express router function
   const router = express.Router();
 
-// shows index is working
-  router.get('/status', (req, res) => {
-    res.json ({
-      healthy: true,
-    });
-  });
-
   // home display
   router.get('/', (req, res) => {
-    var debug = require('../lib/debug');
+    // utility.debug(error('That did not work out so well.'));
     res.json({
-      home: 'URL Shortener by Melony Smith'
+      home: 'URL Shortener by Melony Smith',
     });
-    util.debug("Success! You loaded the home page.");
-    util.debug("Oh no. That didn't work out in your favor.");
+    utility.debug(success('Home Load: Success'));
   });
 
   // redirect short url to original url
- router.get("/redirect/:shortURL", (req, res) => {
-   req.body.shortURL = req.params.shortURL;
-   url.findShorterURL(req.body, (err) => {
-     res.status(500).json(err);
-   }, (data) => {
-     res.redirect("http://www." + data.originalURL);
-   })
- });
+  router.get('/go/:shortURL', (req, res) => {
+    const sURL = req.params.shortURL;
+    url.findShorterURL(sURL, (err) => {
+      utility.debug(error('Load original URL: Error', err));
+      res.status(500).json(err);
+    }, (data) => {
+      utility.debug(success('Load original URL: Success', data));
+      res.redirect('http://www.' + data.originalURL);
+    });
+  });
 
   // express uses API directory
   router.use('/api/v1', require('./api/url')(express));
-
-  // route for original URL redirect
-  router.use('/redirect/', redirect(express));
 
   // return express router
   return router;
