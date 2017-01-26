@@ -1,4 +1,8 @@
-// URL Shortener by Melony Smith
+
+/* URL Shortener with Utility Tools:
+   Debug with Logging and Version Bump
+   by Melony Smith
+*/
 
 /* eslint-env mocha */
 
@@ -16,6 +20,7 @@ const app = express();
 
 require('dotenv').config();
 
+// require server before and close when done
 describe('API', () => {
   let server;
   beforeEach(() => {
@@ -25,6 +30,7 @@ describe('API', () => {
     server.close();
   });
 
+  // / will display
   describe('Express', () => {
     it('responds to /', () => {
       request(server)
@@ -33,6 +39,7 @@ describe('API', () => {
       .expect('Content-Type', /json/)
       .expect(200);
     });
+    // everything else will 404
     it('404s everything else', () => {
       request(server)
         .get('/something/random')
@@ -40,6 +47,7 @@ describe('API', () => {
     });
   });
 
+  // server should be active on port 3000
   describe('Server', () => {
     it('server up and listening on Port 3000', () => {
       request(server);
@@ -53,6 +61,7 @@ describe('API', () => {
     });
   });
 
+  // make sure .env matches datbase information
   describe('Database', () => {
     it('dotenv info matches against database info', () => {
       request(server);
@@ -65,12 +74,14 @@ describe('API', () => {
     });
   });
 
+  // check that debug is working
   describe('Debug', () => {
     it('Debug OK', () => {
     });
   });
-
+  
   describe('Endpoint', () => {
+    // will create random short url from original url
     it('POST returns randomly generated short URL of 6 characters', () => {
       request(server)
       .get('/')
@@ -82,6 +93,7 @@ describe('API', () => {
       });
     });
 
+    // will return all urls in database
     it('GET returns all URLs', () => {
       request(server)
       .get('/api/v1/urls')
@@ -96,6 +108,7 @@ describe('API', () => {
     .done();
     });
 
+    // will return one url by id
     it('GET returns one URL with id, originalURL, shortURL, createdAt and updatedAt properties', (done) => {
       request(server);
       app.get('/api/v1/urls' + this.url.id)
@@ -112,6 +125,7 @@ describe('API', () => {
       done();
     });
 
+    // will updte one url by id
     it('UPDATE updates one URL based on id', (done) => {
       request(server)
       .get('/api/v1/urls' + this.url.id)
@@ -123,6 +137,7 @@ describe('API', () => {
       done();
     });
 
+    // will delete one url by id
     it('DELETE deletes one URL based on id', (done) => {
       request(server)
       .get('/api/v1/urls' + this.url.id)
@@ -135,6 +150,7 @@ describe('API', () => {
     });
   });
 
+  // will redirect short url back to original url
   describe('Redirect', () => {
     const urlGo = ('longlinkexample.com');
     it('redirects short URL to original URL', () => {
