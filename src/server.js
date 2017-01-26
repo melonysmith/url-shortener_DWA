@@ -1,4 +1,8 @@
-// URL Shortener by Melony Smith
+
+/* URL Shortener with Utility Tools:
+   Debug with Logging and Version Bump
+   by Melony Smith
+*/
 
 /* eslint-disable no-console */
 
