@@ -1,4 +1,7 @@
-// URL Shortener by Melony Smith
+/* URL Shortener with Utility Tools:
+   Debug with Logging and Version Bump
+   by Melony Smith
+*/
 
 // dependencies
 const Sequelize = require('sequelize');
