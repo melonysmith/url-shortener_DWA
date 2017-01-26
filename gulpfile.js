@@ -1,19 +1,25 @@
+/* URL Shortener with Utility Tools:
+   Debug with Logging and Version Bump
+   by Melony Smith
+*/
+
+// dependencies
 const gulp = require('gulp');
 const git = require('gulp-git');
 const edit = require('gulp-json-editor');
-// do not edit - Andres' code below
-const argv = require('yargs').argv;
-// do not edit - Andres' code below
-const fs = require('fs');
 
 const packjson = require('./package.json');
 const util = require('./src/lib/util');
 const vbumper = require('./src/lib/vbumper');
 
-// do not edit - Andres' code below
+// - Andres' code below -- do not edit -
 const version = packjson.version.split('.');
-// do not edit - Andres' code below
+// - Andres' code below -- do not edit -
+const argv = require('yargs').argv;
+// - Andres' code below -- do not edit -
 const number = argv.n;
+// - Andres' code below -- do not edit -
+const fs = require('fs');
 
 /* eslint-disable max-len */
 /* eslint-disable consistent-return */
@@ -48,6 +54,8 @@ if ((argv.v === 'major' || argv.v === 'minor' || argv.v === 'patch') && typeof a
 }
 // end of code submitted by Andres -- can edit below
 // **********
+
+// export vbumper function
 module.exports = vbumper;
 
 // git add new and edited files
