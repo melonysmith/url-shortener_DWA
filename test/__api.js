@@ -10,7 +10,7 @@ const db = require('../src/models/db');
 const genShortURL = require('../src/lib/genShortURL');
 
 request('http://localhost:3000');
-require('../src/lib/debug');
+require('../src/lib/util');
 
 const app = express();
 
@@ -90,7 +90,7 @@ describe('API', () => {
       .expect((res) => {
         const urls = res.body;
         // save one single url from the list to test on later
-        this.url = urls[0];
+        this.url.id = urls[0];
         expect(urls.length).to.be.above(0);
       })
     .done();
@@ -98,7 +98,7 @@ describe('API', () => {
 
     it('GET returns one URL with id, originalURL, shortURL, createdAt and updatedAt properties', (done) => {
       request(server);
-      app.get('/api/v1/urls/' + this.url.id)
+      app.get('/api/v1/urls' + this.url.id)
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(() => {
@@ -114,7 +114,7 @@ describe('API', () => {
 
     it('UPDATE updates one URL based on id', (done) => {
       request(server)
-      .get('/api/v1/urls/' + this.url.id)
+      .get('/api/v1/urls' + this.url.id)
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/);
       app.update('/api/v1/urls/' + this.url.id, (req, res) => {
@@ -125,7 +125,7 @@ describe('API', () => {
 
     it('DELETE deletes one URL based on id', (done) => {
       request(server)
-      .get('/api/v1/urls/' + this.url.id)
+      .get('/api/v1/urls' + this.url.id)
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/);
       app.delete('/api/v1/urls/' + this.url.id, (req, res) => {
