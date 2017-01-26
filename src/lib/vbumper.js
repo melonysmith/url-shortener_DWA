@@ -1,3 +1,5 @@
+/* -- ALL CODE BY ANDRES -- */
+
 // Requires
 const packjson = require('../../package.json');
 
