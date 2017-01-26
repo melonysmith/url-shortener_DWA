@@ -1,15 +1,20 @@
 {
-    "name": "debugutil",
-    "version": "1.6.1",
-    "description": "Debug Utility Tool with Logging",
+    "name": "url-shortener_DWA",
+    "version": "1.10.0",
+    "description": "URL Shortener with Debug Utility tool featuring Logging and Version Bumping tool",
     "main": "src/server.js",
     "scripts": {
         "start": "node src/server.js",
         "test": "DEBUG=true mocha"
     },
     "keywords": [
+        "URL",
+        "Shortener",
         "Debug",
         "Utility",
+        "Version",
+        "Increase",
+        "Bump",
         "Tool",
         "Logging"
     ],
