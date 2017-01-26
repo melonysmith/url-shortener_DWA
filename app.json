@@ -1,0 +1,6 @@
+{
+  "name": "URL Shortener API",
+  "description": "URL Shortener featuring Debug Utility tool with Logging and Version Bumper tool",
+  "repository": "https://github.com/melonysmith/url-shortener_DWA",
+  "keywords": "url, shortener, debug, utility, version, bump"
+}
