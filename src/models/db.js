@@ -1,4 +1,7 @@
-// URL Shortener by Melony Smith
+/* URL Shortener with Utility Tools:
+   Debug with Logging and Version Bump
+   by Melony Smith
+*/
 
 // dependencies
 const Sequelize = require('sequelize');
@@ -30,7 +33,9 @@ const sequelize = new Sequelize(
 
 // authenticate connection
 sequelize.authenticate();
+/* eslint-disable no-console */
 console.log(dbCon('Database connection successful. It\'s goin\' down!'));
+/* eslint-enable no-console */
 
 // define URL
 const url = sequelize.define('url', {

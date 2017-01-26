@@ -1,4 +1,8 @@
-// URL Shortener by Melony Smith
+
+/* URL Shortener with Utility Tools:
+   Debug with Logging and Version Bump
+   by Melony Smith
+*/
 
 /* eslint-disable no-console */
 
@@ -21,13 +25,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // express uses routes directory
-app.use('/', require('./routes')(express));
+app.use('/', require('../src/routes')(express));
 
 // set port
 const port = process.env.PORT || 3000;
 // set up server
 const server = app.listen(port, () => {
-  console.log(active('Still on like Donkey Kong on Port ' + port));
+  console.log(active('On like Donkey Kong on Port ' + port));
 });
 
 // export server

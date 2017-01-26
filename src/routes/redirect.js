@@ -1,8 +1,12 @@
-// URL Shortener by Melony Smith
+/* URL Shortener with Utility Tools:
+   Debug with Logging and Version Bump
+   by Melony Smith
+*/
 
 // dependencies
-const url = require('../models/url');
+const url = require('../../src/models/url');
 
+// use express router
 module.exports = (express) => {
   const router = express.Router();
 

@@ -1,7 +1,10 @@
-// URL Shortener by Melony Smith
+/* URL Shortener with Utility Tools:
+   Debug with Logging and Version Bump
+   by Melony Smith
+*/
 
 // dependency
-const db = require('./db');
+const db = require('../../src/models/db');
 
 // create
 exports.create = (payload, err, success) => {
